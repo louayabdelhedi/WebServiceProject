@@ -648,20 +648,23 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_4cb769b89666f3cb84cfe37ec8d0ae6686205b41c1a065729fea5ab29c376e6b');
 
-        $d = new \Doctrine\ORM\Configuration();
-        $d->setEntityNamespaces(array());
-        $d->setMetadataCacheImpl($a);
-        $d->setQueryCacheImpl($b);
-        $d->setResultCacheImpl($c);
-        $d->setMetadataDriverImpl(new \Doctrine\ORM\Mapping\Driver\DriverChain());
-        $d->setProxyDir('C:/xampp/htdocs/WebServiceProject/app/cache/dev/doctrine/orm/Proxies');
-        $d->setProxyNamespace('Proxies');
-        $d->setAutoGenerateProxyClasses(true);
-        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $d->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $d->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+        $d = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $d->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => 'C:\\xampp\\htdocs\\WebServiceProject\\src\\WebService\\WebServiceBundle\\Entity')), 'WebService\\WebServiceBundle\\Entity');
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $d);
+        $e = new \Doctrine\ORM\Configuration();
+        $e->setEntityNamespaces(array('WebServiceWebServiceBundle' => 'WebService\\WebServiceBundle\\Entity'));
+        $e->setMetadataCacheImpl($a);
+        $e->setQueryCacheImpl($b);
+        $e->setResultCacheImpl($c);
+        $e->setMetadataDriverImpl($d);
+        $e->setProxyDir('C:/xampp/htdocs/WebServiceProject/app/cache/dev/doctrine/orm/Proxies');
+        $e->setProxyNamespace('Proxies');
+        $e->setAutoGenerateProxyClasses(true);
+        $e->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $e->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $e->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $e);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
