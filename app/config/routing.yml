@@ -2,4 +2,7 @@ web_service_web_service:
     resource: "@WebServiceWebServiceBundle/Controller/"
     type:     annotation
     prefix:   /
-
+formindex:
+    resource: "@WebServiceWebServiceBundle/Controller/"
+    type:     annotation
+    prefix:   /
