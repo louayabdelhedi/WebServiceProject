@@ -3518,7 +3518,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => 'C:/xampp/htdocs/WebServiceProject/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => 'C:/xampp/htdocs/WebServiceProject/app/cache/dev',
             'kernel.logs_dir' => 'C:/xampp/htdocs/WebServiceProject/app/logs',
             'kernel.bundles' => array(
