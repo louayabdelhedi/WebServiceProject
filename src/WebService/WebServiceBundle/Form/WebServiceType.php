@@ -15,9 +15,9 @@ class WebServiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nameWS')
-            ->add('linkWS')
-        ;
+            ->add('nameWS','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter name')))
+            ->add('linkWS','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter link')))
+            ;
     }
     
     /**

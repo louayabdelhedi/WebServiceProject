@@ -3,14 +3,14 @@
 {% block body -%}
     <h1>Project</h1>
 
-    <table class="record_properties">
+    <table class="record_properties" border="1">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Descproject</th>
+                <th>Description</th>
                 <td>{{ entity.descProject }}</td>
             </tr>
             <tr>
@@ -18,15 +18,15 @@
                 <td>{{ entity.host }}</td>
             </tr>
             <tr>
-                <th>Dbname</th>
+                <th>Data base name</th>
                 <td>{{ entity.dbName }}</td>
             </tr>
             <tr>
-                <th>Logindb</th>
+                <th>Data base login</th>
                 <td>{{ entity.loginDb }}</td>
             </tr>
             <tr>
-                <th>Pwddb</th>
+                <th>Data base password</th>
                 <td>{{ entity.pwdDb }}</td>
             </tr>
         </tbody>

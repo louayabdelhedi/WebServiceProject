@@ -15,8 +15,8 @@ class FieldType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nameField')
-            ->add('typeField')
+            ->add('nameField','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter field name')))
+            ->add('typeField','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter type')))
         ;
     }
     

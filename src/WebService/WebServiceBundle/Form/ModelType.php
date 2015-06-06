@@ -15,8 +15,8 @@ class ModelType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nameModel')
-            ->add('descModel')
+            ->add('nameModel','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter model')))
+            ->add('descModel','textarea',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter model description ')))
         ;
     }
     

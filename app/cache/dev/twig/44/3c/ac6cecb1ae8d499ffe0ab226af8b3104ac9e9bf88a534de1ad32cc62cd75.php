@@ -7,8 +7,8 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-
+        // line 1
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "WebProfilerBundle:Collector:logger.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
             'menu' => array($this, 'block_menu'),
@@ -25,6 +25,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
     {
         // line 3
         $context["logger"] = $this;
+        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -33,7 +34,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
     {
         // line 6
         echo "    ";
-        if ((($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors") || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams"))) {
+        if ((($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()))) {
             // line 7
             echo "        ";
             ob_start();
@@ -41,13 +42,13 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             echo "            <img width=\"15\" height=\"28\" alt=\"Logs\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAA4klEQVQ4y2P4//8/AyWYYXgYwOPp6Xnc3t7+P7EYpB6k7+zZs2ADNEjRjIwDAgKWgAywIUfz8+fPVzg7O/8AGeCATQEQnAfi/SAah/wcV1dXvAYUgORANA75ehcXl+/4DHAABRIe+ZrhbgAhTHsDiEgHBA0glA6GfSDiw5mZma+A+sphBlhVVFQ88vHx+Xfu3Ll7QP5haOjjwtuAuGHv3r3NIMNABqh8+/atsaur666vr+9XUlwSHx//AGQANxCbAnEWyGQicRMQ9wBxIQM0qjiBWAFqkB00/glhayBWHwb1AgB38EJsUtxtWwAAAABJRU5ErkJggg==\" />
             ";
             // line 9
-            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors")) {
+            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array())) {
                 // line 10
                 echo "                ";
                 $context["status_color"] = "red";
                 // line 11
                 echo "            ";
-            } elseif ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) {
+            } elseif ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) {
                 // line 12
                 echo "                ";
                 $context["status_color"] = "yellow";
@@ -56,7 +57,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             }
             // line 14
             echo "            ";
-            $context["error_count"] = (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors") + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams"));
+            $context["error_count"] = (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()));
             // line 15
             echo "            <span class=\"sf-toolbar-status";
             if (array_key_exists("status_color", $context)) {
@@ -73,39 +74,39 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             ob_start();
             // line 18
             echo "            ";
-            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors")) {
+            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array())) {
                 // line 19
                 echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Errors</b>
                     <span class=\"sf-toolbar-status sf-toolbar-status-red\">";
                 // line 21
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()), "html", null, true);
                 echo "</span>
                 </div>
             ";
             }
             // line 24
             echo "            ";
-            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) {
+            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) {
                 // line 25
                 echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Deprecated Calls</b>
                     <span class=\"sf-toolbar-status sf-toolbar-status-yellow\">";
                 // line 27
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array()), "html", null, true);
                 echo "</span>
                 </div>
             ";
             }
             // line 30
             echo "            ";
-            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams")) {
+            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array())) {
                 // line 31
                 echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Silenced Errors</b>
                     <span class=\"sf-toolbar-status sf-toolbar-status\">";
                 // line 33
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()), "html", null, true);
                 echo "</span>
                 </div>
             ";
@@ -115,7 +116,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
             // line 37
             echo "        ";
-            $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+            $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "WebProfilerBundle:Collector:logger.html.twig", 37)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
             // line 38
             echo "    ";
         }
@@ -130,10 +131,10 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
     <strong>Logs</strong>
     ";
         // line 45
-        if ((($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors") || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams"))) {
+        if ((($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()))) {
             // line 46
             echo "        ";
-            $context["error_count"] = (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors") + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams"));
+            $context["error_count"] = (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) + $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()));
             // line 47
             echo "        <span class=\"count\">
             <span>";
@@ -156,7 +157,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
 
     ";
         // line 57
-        $context["priority"] = $this->getAttribute($this->getAttribute((isset($context["request"]) ? $context["request"] : $this->getContext($context, "request")), "query"), "get", array(0 => "priority", 1 => 0), "method");
+        $context["priority"] = $this->getAttribute($this->getAttribute((isset($context["request"]) ? $context["request"] : $this->getContext($context, "request")), "query", array()), "get", array(0 => "priority", 1 => 0), "method");
         // line 58
         echo "
     <table>
@@ -171,26 +172,26 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
         // line 68
         echo "                        ";
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "priorities"));
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "priorities", array()));
         foreach ($context['_seq'] as $context["value"] => $context["level"]) {
             // line 69
             echo "                            ";
-            if (((!(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority"))) && ((isset($context["value"]) ? $context["value"] : $this->getContext($context, "value")) > 100))) {
+            if (( !(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) && ($context["value"] > 100))) {
                 // line 70
                 echo "                                ";
-                $context["priority"] = (isset($context["value"]) ? $context["value"] : $this->getContext($context, "value"));
+                $context["priority"] = $context["value"];
                 // line 71
                 echo "                            ";
             }
             // line 72
             echo "                            <option value=\"";
-            echo twig_escape_filter($this->env, (isset($context["value"]) ? $context["value"] : $this->getContext($context, "value")), "html", null, true);
+            echo twig_escape_filter($this->env, $context["value"], "html", null, true);
             echo "\"";
-            echo ((((isset($context["value"]) ? $context["value"] : $this->getContext($context, "value")) == (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) ? (" selected") : (""));
+            echo ((($context["value"] == (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) ? (" selected") : (""));
             echo ">";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["level"]) ? $context["level"] : $this->getContext($context, "level")), "name"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "name", array()), "html", null, true);
             echo " (";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["level"]) ? $context["level"] : $this->getContext($context, "level")), "count"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "count", array()), "html", null, true);
             echo ")</option>
                         ";
         }
@@ -199,10 +200,10 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 74
         echo "                        ";
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations")) {
+        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) {
             // line 75
             echo "                            ";
-            if ((!(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) {
+            if ( !(isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority"))) {
                 // line 76
                 echo "                                ";
                 $context["priority"] = "-100";
@@ -213,7 +214,7 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             echo "                            <option value=\"-100\"";
             echo ((("-100" == (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) ? (" selected") : (""));
             echo ">DEPRECATION only (";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array()), "html", null, true);
             echo ")</option>
                         ";
         }
@@ -229,13 +230,13 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
 
     ";
         // line 89
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "logs")) {
+        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "logs", array())) {
             // line 90
             echo "        <ul class=\"alt\">
             ";
             // line 91
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "logs"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "logs", array()));
             $context['_iterated'] = false;
             $context['loop'] = array(
               'parent' => $context['_parent'],
@@ -244,22 +245,22 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
               'first'  => true,
             );
             foreach ($context['_seq'] as $context["_key"] => $context["log"]) {
-                if (((((isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) >= 0) && ($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priority") >= (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) || (((isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) < 0) && ((($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type"), 0)) : (0)) == (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))))) {
+                if (((((isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) >= 0) && ($this->getAttribute($context["log"], "priority", array()) >= (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))) || (((isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")) < 0) && ((($this->getAttribute($this->getAttribute($context["log"], "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute($context["log"], "context", array(), "any", false, true), "type", array()), 0)) : (0)) == (isset($context["priority"]) ? $context["priority"] : $this->getContext($context, "priority")))))) {
                     // line 92
                     echo "                <li class=\"";
-                    echo twig_escape_filter($this->env, twig_cycle(array(0 => "odd", 1 => "even"), $this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index")), "html", null, true);
-                    if (($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priority") >= 400)) {
+                    echo twig_escape_filter($this->env, twig_cycle(array(0 => "odd", 1 => "even"), $this->getAttribute($context["loop"], "index", array())), "html", null, true);
+                    if (($this->getAttribute($context["log"], "priority", array()) >= 400)) {
                         echo " error";
-                    } elseif (($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priority") >= 300)) {
+                    } elseif (($this->getAttribute($context["log"], "priority", array()) >= 300)) {
                         echo " warning";
                     }
-                    if ($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "scream", array(), "any", true, true)) {
+                    if ($this->getAttribute($this->getAttribute($context["log"], "context", array(), "any", false, true), "scream", array(), "any", true, true)) {
                         echo " scream";
                     }
                     echo "\">
                     ";
                     // line 93
-                    echo $context["logger"]->getdisplay_message($this->getAttribute((isset($context["loop"]) ? $context["loop"] : $this->getContext($context, "loop")), "index"), (isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")));
+                    echo $context["logger"]->getdisplay_message($this->getAttribute($context["loop"], "index", array()), $context["log"]);
                     echo "
                 </li>
             ";
@@ -290,11 +291,11 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
     }
 
     // line 107
-    public function getdisplay_message($_log_index = null, $_log = null)
+    public function getdisplay_message($__log_index__ = null, $__log__ = null)
     {
         $context = $this->env->mergeGlobals(array(
-            "log_index" => $_log_index,
-            "log" => $_log,
+            "log_index" => $__log_index__,
+            "log" => $__log__,
         ));
 
         $blocks = array();
@@ -303,10 +304,10 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
         try {
             // line 108
             echo "    ";
-            if ((twig_constant("Symfony\\Component\\HttpKernel\\Debug\\ErrorHandler::TYPE_DEPRECATION") == (($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type"), 0)) : (0)))) {
+            if ((twig_constant("Symfony\\Component\\Debug\\ErrorHandler::TYPE_DEPRECATION") == (($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array(), "any", true, true)) ? (_twig_default_filter($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "type", array()), 0)) : (0)))) {
                 // line 109
                 echo "        DEPRECATION -  ";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "message"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "message", array()), "html", null, true);
                 echo "
         ";
                 // line 110
@@ -331,12 +332,12 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
         ";
                 // line 115
                 $context['_parent'] = (array) $context;
-                $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context"), "stack"));
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()), "stack", array()));
                 foreach ($context['_seq'] as $context["index"] => $context["call"]) {
-                    if (((isset($context["index"]) ? $context["index"] : $this->getContext($context, "index")) > 1)) {
+                    if (($context["index"] > 1)) {
                         // line 116
                         echo "            ";
-                        if (((isset($context["index"]) ? $context["index"] : $this->getContext($context, "index")) == 2)) {
+                        if (($context["index"] == 2)) {
                             // line 117
                             echo "                <ul class=\"sf-call-stack\" id=\"";
                             echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
@@ -345,22 +346,22 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
                         }
                         // line 119
                         echo "            ";
-                        if ($this->getAttribute((isset($context["call"]) ? $context["call"] : null), "class", array(), "any", true, true)) {
+                        if ($this->getAttribute($context["call"], "class", array(), "any", true, true)) {
                             // line 120
                             echo "                ";
-                            $context["from"] = (($this->env->getExtension('code')->abbrClass($this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "class")) . "::") . $this->env->getExtension('code')->abbrMethod($this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "function")));
+                            $context["from"] = (($this->env->getExtension('code')->abbrClass($this->getAttribute($context["call"], "class", array())) . "::") . $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array())));
                             // line 121
                             echo "            ";
-                        } elseif ($this->getAttribute((isset($context["call"]) ? $context["call"] : null), "function", array(), "any", true, true)) {
+                        } elseif ($this->getAttribute($context["call"], "function", array(), "any", true, true)) {
                             // line 122
                             echo "                ";
-                            $context["from"] = $this->env->getExtension('code')->abbrMethod($this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "function"));
+                            $context["from"] = $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array()));
                             // line 123
                             echo "            ";
-                        } elseif ($this->getAttribute((isset($context["call"]) ? $context["call"] : null), "file", array(), "any", true, true)) {
+                        } elseif ($this->getAttribute($context["call"], "file", array(), "any", true, true)) {
                             // line 124
                             echo "                ";
-                            $context["from"] = $this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "file");
+                            $context["from"] = $this->getAttribute($context["call"], "file", array());
                             // line 125
                             echo "            ";
                         } else {
@@ -374,12 +375,12 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
                         echo "
             <li>Called from ";
                         // line 129
-                        echo ((($this->getAttribute((isset($context["call"]) ? $context["call"] : null), "file", array(), "any", true, true) && $this->getAttribute((isset($context["call"]) ? $context["call"] : null), "line", array(), "any", true, true))) ? ($this->env->getExtension('code')->formatFile($this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "file"), $this->getAttribute((isset($context["call"]) ? $context["call"] : $this->getContext($context, "call")), "line"), (isset($context["from"]) ? $context["from"] : $this->getContext($context, "from")))) : ((isset($context["from"]) ? $context["from"] : $this->getContext($context, "from"))));
+                        echo ((($this->getAttribute($context["call"], "file", array(), "any", true, true) && $this->getAttribute($context["call"], "line", array(), "any", true, true))) ? ($this->env->getExtension('code')->formatFile($this->getAttribute($context["call"], "file", array()), $this->getAttribute($context["call"], "line", array()), (isset($context["from"]) ? $context["from"] : $this->getContext($context, "from")))) : ((isset($context["from"]) ? $context["from"] : $this->getContext($context, "from"))));
                         echo "</li>
 
             ";
                         // line 131
-                        if (((isset($context["index"]) ? $context["index"] : $this->getContext($context, "index")) == (twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context"), "stack")) - 1))) {
+                        if (($context["index"] == (twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()), "stack", array())) - 1))) {
                             // line 132
                             echo "                </ul>
             ";
@@ -396,19 +397,19 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
             } else {
                 // line 136
                 echo "        ";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priorityName"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priorityName", array()), "html", null, true);
                 echo " - ";
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "message"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "message", array()), "html", null, true);
                 echo "
         ";
                 // line 137
-                if (($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", true, true) && (!twig_test_empty($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context"))))) {
+                if (($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", true, true) &&  !twig_test_empty($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array())))) {
                     // line 138
                     echo "            <br />
             <small>
                 <strong>Context</strong>: ";
                     // line 140
-                    echo twig_escape_filter($this->env, twig_jsonencode_filter($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context"), (64 | 256)), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_jsonencode_filter($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()), (64 | 256)), "html", null, true);
                     echo "
             </small>
         ";
@@ -437,6 +438,6 @@ class __TwigTemplate_443cac6cecb1ae8d499ffe0ab226af8b3104ac9e9bf88a534de1ad32cc6
 
     public function getDebugInfo()
     {
-        return array (  417 => 143,  411 => 140,  405 => 137,  395 => 135,  388 => 134,  382 => 131,  377 => 129,  371 => 127,  359 => 123,  356 => 122,  353 => 121,  350 => 120,  347 => 119,  333 => 115,  328 => 113,  324 => 112,  313 => 110,  308 => 109,  281 => 98,  274 => 96,  237 => 91,  234 => 90,  232 => 89,  210 => 77,  186 => 72,  180 => 70,  161 => 58,  155 => 55,  152 => 54,  114 => 36,  1077 => 657,  1073 => 656,  1069 => 654,  1064 => 651,  1055 => 648,  1051 => 647,  1048 => 646,  1044 => 645,  1035 => 639,  1026 => 633,  1023 => 632,  1021 => 631,  1018 => 630,  1013 => 627,  1004 => 624,  1000 => 623,  997 => 622,  993 => 621,  984 => 615,  975 => 609,  972 => 608,  970 => 607,  967 => 606,  963 => 604,  959 => 602,  955 => 600,  947 => 597,  941 => 595,  937 => 593,  935 => 592,  930 => 590,  926 => 589,  923 => 588,  919 => 587,  911 => 581,  909 => 580,  905 => 579,  896 => 573,  893 => 572,  891 => 571,  888 => 570,  884 => 568,  880 => 566,  874 => 562,  870 => 560,  864 => 558,  862 => 557,  854 => 552,  848 => 548,  844 => 546,  838 => 544,  836 => 543,  830 => 539,  828 => 538,  824 => 537,  815 => 531,  812 => 530,  810 => 529,  807 => 528,  800 => 523,  796 => 521,  790 => 519,  788 => 518,  780 => 513,  774 => 509,  770 => 507,  764 => 505,  762 => 504,  754 => 499,  745 => 493,  742 => 492,  740 => 491,  737 => 490,  732 => 487,  724 => 484,  718 => 482,  705 => 480,  702 => 479,  698 => 477,  696 => 476,  692 => 474,  686 => 472,  682 => 470,  678 => 468,  676 => 467,  671 => 465,  668 => 464,  664 => 463,  655 => 457,  646 => 451,  642 => 449,  640 => 448,  636 => 446,  628 => 444,  626 => 443,  622 => 442,  616 => 440,  603 => 439,  591 => 436,  587 => 434,  578 => 432,  574 => 431,  565 => 430,  563 => 429,  559 => 427,  553 => 425,  551 => 424,  546 => 423,  542 => 421,  536 => 419,  534 => 418,  530 => 417,  527 => 416,  514 => 415,  297 => 200,  293 => 107,  280 => 194,  276 => 193,  271 => 190,  251 => 182,  249 => 92,  188 => 76,  174 => 74,  167 => 71,  118 => 49,  76 => 25,  462 => 202,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  380 => 160,  373 => 156,  361 => 146,  351 => 141,  348 => 140,  342 => 137,  338 => 116,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 111,  303 => 122,  300 => 121,  289 => 196,  286 => 112,  275 => 105,  270 => 102,  267 => 101,  262 => 93,  256 => 96,  248 => 94,  233 => 87,  226 => 84,  216 => 79,  213 => 78,  207 => 76,  200 => 72,  197 => 71,  194 => 70,  191 => 77,  185 => 75,  181 => 65,  178 => 64,  172 => 68,  165 => 60,  153 => 69,  150 => 55,  134 => 54,  113 => 48,  81 => 23,  104 => 31,  97 => 37,  70 => 19,  90 => 26,  84 => 24,  77 => 20,  65 => 23,  53 => 12,  58 => 14,  23 => 1,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 199,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 138,  402 => 130,  398 => 136,  393 => 126,  387 => 164,  384 => 132,  381 => 120,  379 => 119,  374 => 128,  368 => 126,  365 => 125,  362 => 124,  360 => 109,  355 => 143,  341 => 117,  337 => 103,  322 => 101,  314 => 99,  312 => 124,  309 => 97,  305 => 108,  298 => 120,  294 => 90,  285 => 100,  283 => 88,  278 => 106,  268 => 85,  264 => 84,  258 => 187,  252 => 80,  247 => 78,  241 => 90,  229 => 85,  220 => 81,  214 => 69,  177 => 69,  169 => 60,  140 => 55,  132 => 51,  128 => 42,  107 => 36,  61 => 15,  273 => 96,  269 => 94,  254 => 92,  243 => 88,  240 => 86,  238 => 85,  235 => 74,  230 => 82,  227 => 81,  224 => 71,  221 => 80,  219 => 76,  217 => 75,  208 => 68,  204 => 75,  179 => 69,  159 => 57,  143 => 56,  135 => 46,  119 => 40,  102 => 41,  71 => 30,  67 => 20,  63 => 18,  59 => 11,  38 => 7,  94 => 38,  89 => 36,  85 => 23,  75 => 18,  68 => 23,  56 => 21,  87 => 34,  21 => 2,  26 => 6,  93 => 27,  88 => 24,  78 => 19,  46 => 10,  27 => 3,  44 => 9,  31 => 4,  28 => 3,  201 => 74,  196 => 90,  183 => 71,  171 => 73,  166 => 71,  163 => 62,  158 => 67,  156 => 58,  151 => 63,  142 => 59,  138 => 47,  136 => 56,  121 => 50,  117 => 37,  105 => 34,  91 => 25,  62 => 12,  49 => 11,  24 => 4,  25 => 3,  19 => 1,  79 => 21,  72 => 17,  69 => 16,  47 => 18,  40 => 8,  37 => 10,  22 => 2,  246 => 93,  157 => 56,  145 => 46,  139 => 45,  131 => 52,  123 => 42,  120 => 38,  115 => 43,  111 => 47,  108 => 33,  101 => 30,  98 => 31,  96 => 37,  83 => 33,  74 => 30,  66 => 10,  55 => 13,  52 => 12,  50 => 10,  43 => 12,  41 => 8,  35 => 6,  32 => 5,  29 => 2,  209 => 82,  203 => 73,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 66,  176 => 63,  173 => 65,  168 => 61,  164 => 70,  162 => 59,  154 => 58,  149 => 51,  147 => 51,  144 => 49,  141 => 48,  133 => 45,  130 => 46,  125 => 41,  122 => 43,  116 => 39,  112 => 42,  109 => 44,  106 => 36,  103 => 32,  99 => 31,  95 => 27,  92 => 42,  86 => 28,  82 => 21,  80 => 27,  73 => 24,  64 => 13,  60 => 22,  57 => 18,  54 => 20,  51 => 19,  48 => 16,  45 => 9,  42 => 10,  39 => 6,  36 => 5,  33 => 4,  30 => 3,);
+        return array (  418 => 143,  412 => 140,  408 => 138,  406 => 137,  399 => 136,  396 => 135,  389 => 134,  385 => 132,  383 => 131,  378 => 129,  375 => 128,  372 => 127,  369 => 126,  366 => 125,  363 => 124,  360 => 123,  357 => 122,  354 => 121,  351 => 120,  348 => 119,  342 => 117,  339 => 116,  334 => 115,  329 => 113,  325 => 112,  316 => 111,  314 => 110,  309 => 109,  306 => 108,  294 => 107,  286 => 100,  282 => 98,  275 => 96,  263 => 93,  250 => 92,  238 => 91,  235 => 90,  233 => 89,  222 => 80,  214 => 78,  211 => 77,  208 => 76,  205 => 75,  202 => 74,  187 => 72,  184 => 71,  181 => 70,  178 => 69,  173 => 68,  162 => 58,  160 => 57,  156 => 55,  153 => 54,  148 => 51,  142 => 48,  139 => 47,  136 => 46,  134 => 45,  129 => 42,  126 => 41,  121 => 38,  118 => 37,  115 => 36,  109 => 33,  105 => 31,  102 => 30,  96 => 27,  92 => 25,  89 => 24,  83 => 21,  79 => 19,  76 => 18,  73 => 17,  62 => 15,  59 => 14,  56 => 13,  53 => 12,  50 => 11,  47 => 10,  45 => 9,  42 => 8,  39 => 7,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
     }
 }

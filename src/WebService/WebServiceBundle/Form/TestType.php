@@ -15,7 +15,7 @@ class TestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('descTest')
+            ->add('descTest','textarea',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter test description')))
         ;
     }
     

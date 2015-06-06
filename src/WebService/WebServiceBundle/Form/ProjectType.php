@@ -15,11 +15,11 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('descProject')
-            ->add('host')
-            ->add('dbName')
-            ->add('loginDb')
-            ->add('pwdDb')
+            ->add('descProject','textarea',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter description')))
+            ->add('host','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter host')))
+            ->add('dbName','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter data base name')))
+            ->add('loginDb','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter data base login')))
+            ->add('pwdDb','text',array( 'attr' => array('class' => 'form-control','placeholder' => 'Enter data base password')))
         ;
     }
     
